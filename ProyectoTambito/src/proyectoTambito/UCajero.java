@@ -8,4 +8,9 @@ public class UCajero extends Usuario
 	{
 		super(usuario, contraseña);
 	}
+
+	public static int getNivelAcceso() 
+	{
+		return NIVEL_ACCESO;
+	}
 }

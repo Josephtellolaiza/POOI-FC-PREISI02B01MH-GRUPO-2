@@ -26,18 +26,10 @@ public class Inventario
 		this.productosInventario = productosInventario;
 	}
 	
-	public Producto buscarProducto(Object referenciaProducto)
+	public ArrayList<Producto> buscarProducto(Object referenciaProducto)
 	{
 		ArrayList<Producto> listaProductosCoincidencia = new ArrayList<Producto>();
-		
-		Producto productoBuscado = new Producto();
-		
-		boolean salirRespuesta = false;
-		
-		Scanner entrada1 = new Scanner(System.in);
-		
-		String respuestaYN = new String();
-		
+								
 		if(referenciaProducto instanceof Integer)
 		{
 			for(int contador = 0; contador < this.productosInventario.size(); contador++)
@@ -45,7 +37,6 @@ public class Inventario
 				if(referenciaProducto.equals(this.productosInventario.get(contador).getCodigo()))
 				{
 					listaProductosCoincidencia.add(this.productosInventario.get(contador));
-					break;
 				}
 			}
 		}
@@ -57,7 +48,6 @@ public class Inventario
 				if(referenciaProducto.equals(this.productosInventario.get(contador).getPrecio()))
 				{
 					listaProductosCoincidencia.add(this.productosInventario.get(contador));
-					break;
 				}
 			}
 		}
@@ -69,52 +59,11 @@ public class Inventario
 				if(referenciaProducto.equals(this.productosInventario.get(contador).getNombre()))
 				{
 					listaProductosCoincidencia.add(this.productosInventario.get(contador));
-					break;
 				}
 			}
 		}
-		
-		for(Producto producto : listaProductosCoincidencia)
-		{
-			do
-			{
-				System.out.println("Es este el producto que busca? (Y/N)");
-				System.out.println(producto.toString());
 				
-				try
-				{
-					respuestaYN = entrada1.next();
-					
-					if(respuestaYN.equals("Y") || respuestaYN.equals("y"))
-					{
-						productoBuscado = producto;
-						salirRespuesta = true;
-					}
-					
-					else if(respuestaYN.equals("N") || respuestaYN.equals("n"))
-					{
-						System.out.println("Pasando al siguiente producto.");
-						salirRespuesta = true;
-					}
-					
-					else
-					{
-						System.out.println("ERROR");
-					}
-					
-				}
-				
-				catch(InputMismatchException ex)
-				{
-					System.out.println("ERROR");
-				}
-			}
-			while(salirRespuesta == false);
-		}
-		
-		entrada1.close();
-		
-		return productoBuscado;
+		return listaProductosCoincidencia;
 	}
 	
 	public void anadirProducto()
