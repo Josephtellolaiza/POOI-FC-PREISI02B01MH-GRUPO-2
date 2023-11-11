@@ -1,4 +1,4 @@
-package proyectoTambito;
+package clasesProyectoTambito;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

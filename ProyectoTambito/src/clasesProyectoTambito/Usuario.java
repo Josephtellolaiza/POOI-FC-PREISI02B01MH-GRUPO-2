@@ -1,4 +1,4 @@
-package proyectoTambito;
+package clasesProyectoTambito;
 
 public abstract class Usuario 
 {

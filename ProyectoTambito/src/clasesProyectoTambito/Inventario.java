@@ -1,4 +1,4 @@
-package proyectoTambito;
+package clasesProyectoTambito;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
