@@ -44,17 +44,17 @@ public class JFMenuPrincipal extends JFrame {
 
 		setContentPane(contentPane);
 		
-		JButton btnNewButton = new JButton(" GESTIONAR INVENTARIO ");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnNewButton.setBounds(135, 94, 161, 35);
+		JButton btnNewButton = new JButton("Gestionar inventario");
+		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton.setBounds(124, 92, 197, 35);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("GENERAR VENTA");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnNewButton_1.setBounds(135, 149, 161, 35);
+		JButton btnNewButton_1 = new JButton("Generar venta");
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton_1.setBounds(124, 149, 197, 35);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -64,13 +64,13 @@ public class JFMenuPrincipal extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("   Bienvenido a tienda Tambito  ");
-		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 22));
-		lblNewLabel.setBounds(64, 30, 308, 40);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 28));
+		lblNewLabel.setBounds(41, 30, 360, 40);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton_2 = new JButton("Cerrar sesion ");
-		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_2.setBounds(318, 216, 106, 34);
+		JButton btnNewButton_2 = new JButton("Cerrar sesión");
+		btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnNewButton_2.setBounds(304, 216, 120, 34);
 		contentPane.add(btnNewButton_2);
 	}
 }
