@@ -100,7 +100,7 @@ public class JFLogin extends JFrame {
 		labelIcono.setBounds(112, 11, 200, 50);
 		contentPane.add(labelIcono);
 		
-		String rutaImagen = "C:\\Users\\raul\\Pictures\\Saved Pictures\\logoTambito.jpg";
+		String rutaImagen = "C:/Users/raul/Pictures/Saved Pictures/logoTambito.jpg";
 		ImageIcon LTOriginal = new ImageIcon(rutaImagen);
 		Image LTAjustado = LTOriginal.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
 		ImageIcon LTIcono = new ImageIcon(LTAjustado);
