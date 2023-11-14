@@ -6,8 +6,7 @@ import java.time.format.DateTimeFormatter;
 public class Producto 
 {
 	Double precio;
-	
-	Integer codigo;
+
 	Integer cantidad;
 	
 	String nombre = new String();
@@ -32,16 +31,6 @@ public class Producto
 	public void setPrecio(Double precio) 
 	{
 		this.precio = precio;
-	}
-
-	public Integer getCodigo() 
-	{
-		return codigo;
-	}
-
-	public void setCodigo(Integer codigo) 
-	{
-		this.codigo = codigo;
 	}
 
 	public Integer getCantidad() 
@@ -85,7 +74,7 @@ public class Producto
 	{
 		String fechaLanzamiento = this.fechaLanzamiento.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"));
 		
-		return "Producto [Precio = " + precio + ", Código = " + codigo + ", Cantidad disponible = " + cantidad + ", Nombre del producto = " + nombre + ", Fecha de lanzamiento = "
+		return "Producto [Precio = " + precio + ", Cantidad disponible = " + cantidad + ", Nombre del producto = " + nombre + ", Fecha de lanzamiento = "
 				+ fechaLanzamiento + "]";
 	}
 }
