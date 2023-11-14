@@ -1,6 +1,6 @@
 package clasesProyectoTambito;
 
-import java.util.ArrayList;
+import componentesGUI.JFLogin;
 
 public class TestPrincipal {
 
@@ -11,6 +11,9 @@ public class TestPrincipal {
 		// E incluso se crearan más en el futuro
 		// Hay que reunirnos la otra semana
 		// No puedo hacer todo el codigo
+		
+		JFLogin prueba = new JFLogin();
+		prueba.setVisible(true);
 	}
 
 }
