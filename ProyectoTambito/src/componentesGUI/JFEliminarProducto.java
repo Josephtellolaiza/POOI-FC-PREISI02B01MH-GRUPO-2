@@ -4,24 +4,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JComboBox;
-import javax.swing.JRadioButton;
-import java.awt.Color;
 import javax.swing.JCheckBox;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
 import javax.swing.JScrollBar;
-import javax.swing.JLayeredPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
-import javax.swing.JEditorPane;
-import javax.swing.border.TitledBorder;
 
 public class JFEliminarProducto extends JFrame {
 

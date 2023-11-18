@@ -5,16 +5,15 @@ import java.time.format.DateTimeFormatter;
 
 public class Producto 
 {
-	Double precio;
-	
-	Integer codigo;
-	Integer cantidad;
+	double precio;
+
+	int cantidad;
 	
 	String nombre = new String();
 	
 	LocalDateTime fechaLanzamiento = LocalDateTime.now();
 
-	public Producto(Double precio, Integer cantidad, String nombre) 
+	public Producto(double precio, int cantidad, String nombre) 
 	{
 		this.precio = precio;
 		this.cantidad = cantidad;
@@ -29,19 +28,9 @@ public class Producto
 		return precio;
 	}
 
-	public void setPrecio(Double precio) 
+	public void setPrecio(double precio) 
 	{
 		this.precio = precio;
-	}
-
-	public Integer getCodigo() 
-	{
-		return codigo;
-	}
-
-	public void setCodigo(Integer codigo) 
-	{
-		this.codigo = codigo;
 	}
 
 	public Integer getCantidad() 
@@ -49,7 +38,7 @@ public class Producto
 		return cantidad;
 	}
 
-	public void setCantidad(Integer cantidad) 
+	public void setCantidad(int cantidad) 
 	{
 		this.cantidad = cantidad;
 	}
@@ -85,7 +74,7 @@ public class Producto
 	{
 		String fechaLanzamiento = this.fechaLanzamiento.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"));
 		
-		return "Producto [Precio = " + precio + ", Código = " + codigo + ", Cantidad disponible = " + cantidad + ", Nombre del producto = " + nombre + ", Fecha de lanzamiento = "
+		return "Producto [Precio = " + precio + ", Cantidad disponible = " + cantidad + ", Nombre del producto = " + nombre + ", Fecha de lanzamiento = "
 				+ fechaLanzamiento + "]";
 	}
 }

@@ -1,7 +1,5 @@
 package clasesProyectoTambito;
 
-import java.util.ArrayList;
-
 public class TestPrincipal {
 
 	public static void main(String[] args) 

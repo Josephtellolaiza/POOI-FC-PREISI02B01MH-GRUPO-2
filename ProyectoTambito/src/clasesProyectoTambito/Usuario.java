@@ -1,6 +1,6 @@
 package clasesProyectoTambito;
 
-public abstract class Usuario 
+public class Usuario 
 {
 	private String usuario = new String();
 	private String contraseña = new String();
@@ -10,6 +10,9 @@ public abstract class Usuario
 		this.usuario = usuario;
 		this.contraseña = contraseña;
 	}
+	
+	public Usuario()
+	{}
 
 	public String getUsuario() 
 	{
