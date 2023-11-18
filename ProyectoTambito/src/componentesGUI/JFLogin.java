@@ -10,16 +10,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
+
+import clasesProyectoTambito.*;
 
 public class JFLogin extends JFrame {
 
@@ -57,6 +61,7 @@ public class JFLogin extends JFrame {
 		contentPane.setLayout(null);
 
 		ingresarUsuario = new JTextField();
+		ingresarUsuario.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		ingresarUsuario.addMouseListener(new MouseAdapter() {
 		});
 		ingresarUsuario.setBounds(225, 85, 205, 30);
@@ -72,6 +77,7 @@ public class JFLogin extends JFrame {
 		contentPane.add(textoContraseña);
 
 		ingresarContraseña = new JPasswordField();
+		ingresarContraseña.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		ingresarContraseña.addMouseListener(new MouseAdapter() {});
 		ingresarContraseña.setBounds(223, 141, 205, 30);
 		contentPane.add(ingresarContraseña);
@@ -83,7 +89,35 @@ public class JFLogin extends JFrame {
 			}
 		});
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) 
+			{
+				char[] clave = ingresarContraseña.getPassword();
+				String claveFinal = new String(clave);
+				String usuarioIngresado = ingresarUsuario.getText();
+				
+				ArrayList<Usuario> usuariosTienda = new ArrayList<Usuario>();
+				UCajero cajero1 = new UCajero("mario.valdivia", "1234");
+				usuariosTienda.add(cajero1);
+				
+				Inventario inventarioTienda = new Inventario();
+				
+				Tienda tambito = new Tienda(inventarioTienda, usuariosTienda);
+				for(Usuario usuario : tambito.getUsuariosTienda()) 
+				{
+					if(usuarioIngresado.equals(usuario.getUsuario()) && claveFinal.equals(usuario.getContraseña()))
+					{
+						dispose();
+						JOptionPane.showMessageDialog(null, "Bienvenido al sistema", "INGRESASTE", JOptionPane.INFORMATION_MESSAGE);
+						break;
+					}
+					
+					else
+					{
+						JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectta", "ERROR", JOptionPane.ERROR_MESSAGE);
+						break;
+					}
+				}
+				
 			}
 		});
 		btnNewButton.setBounds(158, 220, 123, 30);
@@ -99,7 +133,7 @@ public class JFLogin extends JFrame {
 		labelIcono.setBounds(112, 11, 200, 50);
 		contentPane.add(labelIcono);
 
-		String rutaImagen = "C:/Users/raul/Pictures/Saved Pictures/logoTambito.jpg";
+		String rutaImagen = "src/recursos/logoTambito.jpg";
 		ImageIcon LTOriginal = new ImageIcon(rutaImagen);
 		Image LTAjustado = LTOriginal.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
 		ImageIcon LTIcono = new ImageIcon(LTAjustado);

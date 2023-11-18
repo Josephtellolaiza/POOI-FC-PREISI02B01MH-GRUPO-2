@@ -12,8 +12,8 @@ public class TestPrincipal {
 		// Hay que reunirnos la otra semana
 		// No puedo hacer todo el codigo
 
-		JFLogin prueba = new JFLogin();
-		prueba.setVisible(true);
+		JFLogin login = new JFLogin();
+		
 	}
 
 }
