@@ -12,6 +12,7 @@ import javax.swing.JTable;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class JFGenerarVenta extends JFrame {
 
@@ -54,10 +55,12 @@ public class JFGenerarVenta extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Producto:");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		lblNewLabel.setBounds(25, 11, 69, 26);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Cantidad:");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		lblNewLabel_1.setBounds(25, 48, 69, 26);
 		contentPane.add(lblNewLabel_1);
 		
@@ -72,11 +75,13 @@ public class JFGenerarVenta extends JFrame {
 		contentPane.add(comboBox);
 		
 		JLabel lblNewLabel_2 = new JLabel("Precio Unitario:");
-		lblNewLabel_2.setBounds(252, 14, 116, 20);
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(229, 14, 116, 20);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Importe:");
-		lblNewLabel_3.setBounds(252, 48, 69, 26);
+		lblNewLabel_3.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		lblNewLabel_3.setBounds(239, 48, 69, 26);
 		contentPane.add(lblNewLabel_3);
 		
 		textField_1 = new JTextField();
@@ -92,18 +97,21 @@ public class JFGenerarVenta extends JFrame {
 		textField_2.setColumns(10);
 		
 		table = new JTable();
-		table.setBounds(50, 86, 337, 93);
+		table.setBounds(49, 82, 337, 93);
 		contentPane.add(table);
 		
 		JLabel label = new JLabel("Subtotal:");
+		label.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		label.setBounds(252, 187, 46, 14);
 		contentPane.add(label);
 		
 		JLabel label_1 = new JLabel("IGV:");
+		label_1.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		label_1.setBounds(252, 203, 46, 14);
 		contentPane.add(label_1);
 		
 		JLabel label_2 = new JLabel("Total:");
+		label_2.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		label_2.setBounds(252, 220, 46, 14);
 		contentPane.add(label_2);
 		

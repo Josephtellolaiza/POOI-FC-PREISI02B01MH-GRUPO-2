@@ -62,6 +62,7 @@ public class JFEliminarProducto extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Cancelar");
+		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -70,6 +71,7 @@ public class JFEliminarProducto extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Confirmar");
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
 		btnNewButton_1.setBounds(326, 201, 98, 36);
 		contentPane.add(btnNewButton_1);
 		
@@ -82,29 +84,35 @@ public class JFEliminarProducto extends JFrame {
 		contentPane.add(scrollBar);
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Todo");
+		chckbxNewCheckBox.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		chckbxNewCheckBox.setBounds(20, 79, 97, 23);
 		contentPane.add(chckbxNewCheckBox);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		lblNewLabel_1.setBounds(189, 83, 46, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		lblNewLabel_2.setBounds(189, 122, 46, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		lblNewLabel_3.setBounds(189, 165, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JCheckBox chckbxNewCheckBox_1 = new JCheckBox("Producto1");
+		chckbxNewCheckBox_1.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		chckbxNewCheckBox_1.setVerticalAlignment(SwingConstants.BOTTOM);
 		chckbxNewCheckBox_1.setBounds(20, 118, 97, 23);
 		contentPane.add(chckbxNewCheckBox_1);
 		
 		JCheckBox chckbxNewCheckBox_2 = new JCheckBox("New check box");
+		chckbxNewCheckBox_2.setFont(new Font("Times New Roman", Font.PLAIN, 12));
 		chckbxNewCheckBox_2.setVerticalAlignment(SwingConstants.TOP);
-		chckbxNewCheckBox_2.setBounds(20, 161, 97, 23);
+		chckbxNewCheckBox_2.setBounds(20, 161, 107, 23);
 		contentPane.add(chckbxNewCheckBox_2);
 		
 		JList list = new JList();
