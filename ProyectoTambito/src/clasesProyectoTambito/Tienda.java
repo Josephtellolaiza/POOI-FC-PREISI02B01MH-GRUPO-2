@@ -2,22 +2,22 @@ package clasesProyectoTambito;
 
 import java.util.ArrayList;
 
-public class Tienda 
+public class Tienda
 {
 	private Inventario inventarioTienda = new Inventario();
 	private ArrayList<Usuario> usuariosTienda = new ArrayList<Usuario>();
-	
-	public Tienda(Inventario inventarioTienda, ArrayList<Usuario> usuariosTienda) 
+
+	public Tienda(Inventario inventarioTienda, ArrayList<Usuario> usuariosTienda)
 	{
 		this.inventarioTienda = inventarioTienda;
 		this.usuariosTienda = usuariosTienda;
 	}
-	
-	public Inventario getInventarioTienda() 
+
+	public Inventario getInventarioTienda()
 	{
 		return inventarioTienda;
 	}
-	public void setInventarioTienda(Inventario inventarioTienda) 
+	public void setInventarioTienda(Inventario inventarioTienda)
 	{
 		this.inventarioTienda = inventarioTienda;
 	}
@@ -29,6 +29,6 @@ public class Tienda
 	{
 		this.usuariosTienda = usuariosTienda;
 	}
-	
-	
+
+
 }
