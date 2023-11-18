@@ -47,7 +47,7 @@ public class JFAñadirProducto extends JFrame {
 		contentPane.setLayout(null);
 		
 		textField = new JTextField();
-		textField.setBounds(138, 43, 181, 26);
+		textField.setBounds(138, 43, 185, 25);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -67,12 +67,12 @@ public class JFAñadirProducto extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(138, 85, 181, 26);
+		textField_1.setBounds(138, 85, 185, 25);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(138, 122, 181, 26);
+		textField_2.setBounds(138, 122, 185, 25);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		

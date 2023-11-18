@@ -2,26 +2,28 @@ package componentesGUI;
 
 import java.awt.EventQueue;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 /*----MODIFICADO----*/
 
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-import javax.swing.border.EmptyBorder;
 
 import clasesProyectoTambito.*;
 
@@ -52,14 +54,14 @@ public class JFLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public JFLogin() {
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+		
 		ingresarUsuario = new JTextField();
 		ingresarUsuario.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		ingresarUsuario.addMouseListener(new MouseAdapter() {
@@ -67,21 +69,21 @@ public class JFLogin extends JFrame {
 		ingresarUsuario.setBounds(225, 85, 205, 30);
 		contentPane.add(ingresarUsuario);
 		ingresarUsuario.setColumns(10);
-
+		
 		JLabel textoUsuario = new JLabel("INGRESE USUARIO:");
 		textoUsuario.setBounds(10, 84, 205, 30);
 		contentPane.add(textoUsuario);
-
+		
 		JLabel textoContraseña = new JLabel("INGRESE CONTRASEÑA:");
 		textoContraseña.setBounds(10, 140, 205, 30);
 		contentPane.add(textoContraseña);
-
+		
 		ingresarContraseña = new JPasswordField();
 		ingresarContraseña.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		ingresarContraseña.addMouseListener(new MouseAdapter() {});
 		ingresarContraseña.setBounds(223, 141, 205, 30);
 		contentPane.add(ingresarContraseña);
-
+		
 		JButton btnNewButton = new JButton("Ingresar");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -122,13 +124,13 @@ public class JFLogin extends JFrame {
 		});
 		btnNewButton.setBounds(158, 220, 123, 30);
 		contentPane.add(btnNewButton);
-
+		
 		/*----MODIFICADO----*/
-
+		
 		Font fuente = new Font("Times New Roman", 1, 15);
 		textoUsuario.setFont(fuente);
 		textoContraseña.setFont(fuente);
-
+		
 		JLabel labelIcono = new JLabel("Logo");
 		labelIcono.setBounds(112, 11, 200, 50);
 		contentPane.add(labelIcono);

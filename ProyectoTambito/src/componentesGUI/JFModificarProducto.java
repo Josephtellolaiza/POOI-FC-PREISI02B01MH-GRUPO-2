@@ -48,7 +48,7 @@ public class JFModificarProducto extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Producto:");
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		lblNewLabel.setBounds(53, 44, 91, 20);
+		lblNewLabel.setBounds(53, 44, 80, 20);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Precio:");
