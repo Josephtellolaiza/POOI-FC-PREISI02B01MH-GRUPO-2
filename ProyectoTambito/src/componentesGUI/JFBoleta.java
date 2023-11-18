@@ -43,9 +43,9 @@ public class JFBoleta extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblTitulo = new JLabel("TIENDA TAMBITO");
-		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblTitulo.setBounds(142, 11, 153, 40);
+		JLabel lblTitulo = new JLabel("Tienda Tambito");
+		lblTitulo.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblTitulo.setBounds(153, 11, 153, 40);
 		contentPane.add(lblTitulo);
 		
 		JLabel lblProductos = new JLabel("Productos:");
@@ -90,7 +90,7 @@ public class JFBoleta extends JFrame {
 		
 		JButton btnImprimir = new JButton("Imprimir Boleta");
 		btnImprimir.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnImprimir.setBounds(303, 231, 121, 19);
+		btnImprimir.setBounds(303, 225, 121, 25);
 		contentPane.add(btnImprimir);
 	}
 }

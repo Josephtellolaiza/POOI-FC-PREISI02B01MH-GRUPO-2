@@ -22,6 +22,7 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
+import java.awt.Font;
 
 public class JFGestionDelInvetario extends JFrame {
 
@@ -56,28 +57,31 @@ public class JFGestionDelInvetario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		Button button = new Button("MODIFICAR PRODUCTO");
+		Button button = new Button("Modificar producto");
+		button.setFont(new Font("Times New Roman", Font.PLAIN, 13));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button.setBounds(10, 206, 128, 33);
+		button.setBounds(10, 206, 136, 33);
 		contentPane.add(button);
 		
-		Button button_1 = new Button("AÑADIR PRODUCTO");
+		Button button_1 = new Button("Añadir producto");
+		button_1.setFont(new Font("Times New Roman", Font.PLAIN, 13));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_1.setBounds(164, 206, 110, 33);
+		button_1.setBounds(169, 206, 110, 33);
 		contentPane.add(button_1);
 		
-		Button button_2 = new Button("ELMINAR PRODUCTO");
+		Button button_2 = new Button("Eliminar producto");
+		button_2.setFont(new Font("Times New Roman", Font.PLAIN, 13));
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_2.setBounds(290, 206, 117, 33);
+		button_2.setBounds(307, 206, 117, 33);
 		contentPane.add(button_2);
 		
 		JScrollPane scrollPane = new JScrollPane();
