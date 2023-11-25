@@ -5,17 +5,20 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
-
+import java.awt.Image;
+import clasesProyectoTambito.*;
 public class JFMenuPrincipal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
+	private Tienda tambito = new Tienda();
 	/**
 	 * Launch the application.
 	 */
@@ -43,37 +46,68 @@ public class JFMenuPrincipal extends JFrame {
 
 		setContentPane(contentPane);
 		
-		JButton btnNewButton = new JButton("Gestionar inventario");
-		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnNewButton.setBounds(124, 92, 197, 35);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton botonGestionInventario = new JButton("Gestionar inventario");
+		botonGestionInventario.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		botonGestionInventario.setBounds(15, 105, 190, 35);
+		botonGestionInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				JFGestionInventario gestionInventario = new JFGestionInventario();
+				gestionInventario.setTambito(getTambito());
+				gestionInventario.setVisible(true);
 			}
 		});
 		
 		JButton btnNewButton_1 = new JButton("Generar venta");
-		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnNewButton_1.setBounds(124, 149, 197, 35);
+		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		btnNewButton_1.setBounds(229, 105, 190, 35);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		contentPane.setLayout(null);
-		contentPane.add(btnNewButton_1);
-		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("   Bienvenido a tienda Tambito  ");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 28));
-		lblNewLabel.setBounds(41, 30, 360, 40);
-		contentPane.add(lblNewLabel);
+		JLabel labelIcono = new JLabel("Logo");
+		labelIcono.setBounds(211, 25, 200, 50);
+		contentPane.add(labelIcono);
+		contentPane.add(btnNewButton_1);
+		contentPane.add(botonGestionInventario);
+		
+		String rutaImagen = "src/recursos/logoTambito.jpg";
+		ImageIcon LTOriginal = new ImageIcon(rutaImagen);
+		Image LTAjustado = LTOriginal.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
+		ImageIcon LTIcono = new ImageIcon(LTAjustado);
+		labelIcono.setIcon(LTIcono);
+		
+		JLabel welcome = new JLabel("  Bienvenido a");
+		welcome.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		welcome.setBounds(28, 30, 383, 40);
+		contentPane.add(welcome);
 		
 		JButton btnNewButton_2 = new JButton("Cerrar sesión");
-		btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnNewButton_2.setBounds(281, 209, 120, 34);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		btnNewButton_2.setBounds(229, 175, 190, 35);
 		contentPane.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Registro de ventas");
-		btnNewButton_3.setBounds(36, 210, 123, 34);
+		btnNewButton_3.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		btnNewButton_3.setBounds(15, 175, 190, 35);
 		contentPane.add(btnNewButton_3);
+		
+		
+	}
+
+	public Tienda getTambito() 
+	{
+		return tambito;
+	}
+
+	public void setTambito(Tienda tambito) 
+	{
+		this.tambito = tambito;
 	}
 }

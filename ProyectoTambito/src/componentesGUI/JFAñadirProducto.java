@@ -5,19 +5,30 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clasesProyectoTambito.Tienda;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class JFAñadirProducto extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField INNombre;
+	private JTextField INPrecio;
+	private JTextField INCantidad;
 
+	private Tienda tambito = new Tienda();
 	/**
 	 * Launch the application.
 	 */
@@ -46,44 +57,103 @@ public class JFAñadirProducto extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(138, 43, 185, 25);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		INNombre = new JTextField();
+		INNombre.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		INNombre.setBounds(140, 60, 185, 25);
+		contentPane.add(INNombre);
+		INNombre.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Producto:");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		lblNewLabel.setBounds(53, 44, 91, 20);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		lblNewLabel.setBounds(10, 60, 90, 20);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Precio:");
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(53, 86, 80, 20);
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		lblNewLabel_1.setBounds(10, 100, 80, 20);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Unidades:");
-		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(53, 123, 80, 20);
+		lblNewLabel_2.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		lblNewLabel_2.setBounds(10, 140, 80, 20);
 		contentPane.add(lblNewLabel_2);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(138, 85, 185, 25);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		INPrecio = new JTextField();
+		INPrecio.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		INPrecio.setBounds(140, 100, 185, 25);
+		contentPane.add(INPrecio);
+		INPrecio.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(138, 122, 185, 25);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		INCantidad = new JTextField();
+		INCantidad.setFont(new Font("Times New Roman", Font.PLAIN, 13));
+		INCantidad.setBounds(140, 140, 185, 25);
+		contentPane.add(INCantidad);
+		INCantidad.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Regresar");
-		btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnNewButton.setBounds(95, 212, 102, 23);
-		contentPane.add(btnNewButton);
+		JButton btnRegresar = new JButton("Regresar");
+		btnRegresar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				JFGestionInventario gestionInventario = new JFGestionInventario();
+				gestionInventario.setTambito(getTambito());
+				gestionInventario.setVisible(true);
+			}
+		});
+		btnRegresar.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnRegresar.setBounds(80, 212, 130, 35);
+		contentPane.add(btnRegresar);
 		
-		JButton btnNewButton_1 = new JButton("Confirmar");
-		btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
-		btnNewButton_1.setBounds(255, 212, 102, 23);
-		contentPane.add(btnNewButton_1);
+		
+		
+		JButton btnConfirmar = new JButton("Confirmar");
+		btnConfirmar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Tienda tambito = new Tienda();
+				tambito = getTambito();
+				
+				if(INPrecio.getText() != null && INCantidad.getText() != null && INNombre.getText() != null)
+				{
+					double NPrecio = Double.parseDouble(INPrecio.getText());
+					int NCantidad = Integer.parseInt(INCantidad.getText());
+					tambito.getInventarioTienda().anadirProducto(NPrecio, NCantidad, INNombre.getText());
+					setTambito(tambito);
+				}
+				
+				else
+				{
+					JOptionPane.showMessageDialog(null, "No hay datos", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
+				
+				setVisible(false);
+				JFGestionInventario gestionInventario = new JFGestionInventario();
+				gestionInventario.setTambito(tambito);
+				gestionInventario.setVisible(true);
+			}
+		});
+		
+		btnConfirmar.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		btnConfirmar.setBounds(250, 212, 130, 35);
+		contentPane.add(btnConfirmar);
+		
+		JLabel labelIcono = new JLabel("Logo");
+		labelIcono.setBounds(10, 10, 200, 40);
+		contentPane.add(labelIcono);
+		
+		String rutaImagen = "src/recursos/logoTambito.jpg";
+		ImageIcon LTOriginal = new ImageIcon(rutaImagen);
+		Image LTAjustado = LTOriginal.getImage().getScaledInstance(200, 50, Image.SCALE_SMOOTH);
+		ImageIcon LTIcono = new ImageIcon(LTAjustado);
+		labelIcono.setIcon(LTIcono);
+	}
+
+	public Tienda getTambito() 
+	{
+		return tambito;
+	}
+
+	public void setTambito(Tienda tambito) 
+	{
+		this.tambito = tambito;
 	}
 }

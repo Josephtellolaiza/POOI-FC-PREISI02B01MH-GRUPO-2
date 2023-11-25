@@ -11,6 +11,9 @@ public class RegistroVenta
 		this.ventasRealizadas = ventasRealizadas;
 	}
 
+	public RegistroVenta()
+	{}
+	
 	public ArrayList<Venta> getVentasRealizadas() 
 	{
 		return ventasRealizadas;
