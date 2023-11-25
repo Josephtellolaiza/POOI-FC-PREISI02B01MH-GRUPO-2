@@ -87,14 +87,22 @@ public class JFLogin extends JFrame {
 		botonIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
+				boolean confirmar = false;
+				
+				Usuario UIAdmin = new UAdministradorInventario();
+				Usuario UICajero = new UCajero();
+				
 				char[] clave = ingresarContraseña.getPassword();
 				String claveFinal = new String(clave);
 				String usuarioIngresado = ingresarUsuario.getText();
 
 				ArrayList<Usuario> usuariosTienda = new ArrayList<Usuario>();
-				UCajero cajero1 = new UCajero("mario.valdivia", "1234");
+				Usuario cajero1 = new UCajero("mario.valdivia", "1234");
+				Usuario administrador1 = new UAdministradorInventario("alfonso.ugarte", "6789");
+				
 				usuariosTienda.add(cajero1);
-
+				usuariosTienda.add(administrador1);
+				
 				Inventario inventarioTienda = new Inventario();
 				RegistroVenta registroVentas = new RegistroVenta();
 				
@@ -105,21 +113,36 @@ public class JFLogin extends JFrame {
 					if(usuarioIngresado.equals(usuario.getUsuario()) && claveFinal.equals(usuario.getContraseña()))
 					{
 						setVisible(false);
-						JOptionPane.showMessageDialog(null, "Bienvenido al sistema", "INGRESASTE", JOptionPane.INFORMATION_MESSAGE);
+						
+						confirmar = true;
 						
 						JFMenuPrincipal menuPrincipal = new JFMenuPrincipal();
-						menuPrincipal.setVisible(true);
 						menuPrincipal.setTambito(tambito);
-						break;
-					}
-
-					else
-					{
-						JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectta", "ERROR", JOptionPane.ERROR_MESSAGE);
+						
+						if(usuario instanceof UCajero)
+						{
+							UICajero = usuario;
+							menuPrincipal.setUICajero(UICajero);
+						}
+						
+						else if(usuario instanceof UAdministradorInventario)
+						{
+							UIAdmin = usuario;
+							menuPrincipal.setUIAdmin(UIAdmin);
+						}
+						
+						JOptionPane.showMessageDialog(null, "Bienvenido al sistema", "INGRESASTE", JOptionPane.INFORMATION_MESSAGE);
+						
+						menuPrincipal.setVisible(true);
+						
 						break;
 					}
 				}
-
+				
+				if(confirmar == false)
+				{
+					JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectta", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		botonIngresar.setBounds(158, 220, 123, 30);

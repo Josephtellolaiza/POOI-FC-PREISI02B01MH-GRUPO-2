@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.Image;
 import clasesProyectoTambito.*;
@@ -19,6 +21,8 @@ public class JFMenuPrincipal extends JFrame {
 	private JPanel contentPane;
 
 	private Tienda tambito = new Tienda();
+	private Usuario UIAdmin = new UAdministradorInventario(null, null);
+	private Usuario UICajero = new UCajero(null, null);
 	/**
 	 * Launch the application.
 	 */
@@ -34,7 +38,6 @@ public class JFMenuPrincipal extends JFrame {
 			}
 		});
 	}
-
 	/**
 	 * Create the frame.
 	 */
@@ -51,11 +54,23 @@ public class JFMenuPrincipal extends JFrame {
 		botonGestionInventario.setBounds(15, 105, 190, 35);
 		botonGestionInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				JFGestionInventario gestionInventario = new JFGestionInventario();
-				gestionInventario.setTambito(getTambito());
-				gestionInventario.setVisible(true);
-			}
+				
+				boolean confirmarInventario = false;
+				
+				if(UIAdmin.getUsuario() != null && UIAdmin.getContraseña() != null)
+				{
+					setVisible(false);
+					confirmarInventario = true;
+					JFGestionInventario gestionInventario = new JFGestionInventario();
+					gestionInventario.setTambito(getTambito());
+					gestionInventario.setVisible(true);
+				}
+				
+				if(confirmarInventario == false)
+				{
+					JOptionPane.showMessageDialog(null, "Solo se permite ingresar al administrador.", "ERROR", JOptionPane.ERROR_MESSAGE);
+				}
+				}
 		});
 		
 		JButton btnNewButton_1 = new JButton("Generar venta");
@@ -109,5 +124,25 @@ public class JFMenuPrincipal extends JFrame {
 	public void setTambito(Tienda tambito) 
 	{
 		this.tambito = tambito;
+	}
+	
+	public Usuario getUIAdmin() 
+	{
+		return UIAdmin;
+	}
+
+	public void setUIAdmin(Usuario uIAdmin) 
+	{
+		UIAdmin = uIAdmin;
+	}
+
+	public Usuario getUICajero() 
+	{
+		return UICajero;
+	}
+
+	public void setUICajero(Usuario uICajero) 
+	{
+		UICajero = uICajero;
 	}
 }
